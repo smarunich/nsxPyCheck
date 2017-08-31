@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
-# Idea: @smarunich, @klam
-# http://pubs.vmware.com/nsx-63/topic/com.vmware.ICbase/PDF/nsx_63_api.pdf
+
+"""
+    nsxPyCheck - NSX Configuration Compliance Tool
+    Perform NSX elements configuration collection and compare the configuration against defined baseline.
+    NSX 6.3.x API: http://pubs.vmware.com/nsx-63/topic/com.vmware.ICbase/PDF/nsx_63_api.pdf
+
+"""
 
 import base64
 import ssl
@@ -19,7 +24,9 @@ import jinja2
 from inscriptis import get_text
 import xmltodict
 
-__author__ = 'smarunich' 
+__author__ = 'smarunich'
+__credits__ = 'Kevin Lam, Sergey Marunich'
+__version__ = '1.0.1'
 
 config = ConfigParser()
 config.read('nsxPyCheck.config')
@@ -167,7 +174,7 @@ def nsx_post(url, data, file_name=None):
     return response
 
 def nsx_cli(nsxmgr,cli,file_name=None):
-    ''' Interface to run NSX CLI. 
+    ''' Interface to run NSX CLI.
     '''
     url='https://'+str(nsxmgr)+'/api/1.0/nsx/cli?action=execute'
     nsx_cliOutput = nsx_post(url,'<nsxcli><command>'+str(cli)+'</command></nsxcli>',file_name)
@@ -201,7 +208,7 @@ def nsx_get_edges_list(nsxmgr,working_dir,edgeType):
         edgeTypeFlag=['distributedRouter','gatewayServices']
     # if list - multiple nsx edges to be captured, if else/dict only one edge deployed:
     if isinstance(data['pagedEdgeList']['edgePage']['edgeSummary'],dict):
-        data['pagedEdgeList']['edgePage']['edgeSummary']=[data['pagedEdgeList']['edgePage']['edgeSummary']]    
+        data['pagedEdgeList']['edgePage']['edgeSummary']=[data['pagedEdgeList']['edgePage']['edgeSummary']]
     for edge in data['pagedEdgeList']['edgePage']['edgeSummary']:
          if edge['edgeType'] in edgeTypeFlag:
             edgeIdList +=[( edge['id'])]
@@ -210,13 +217,13 @@ def nsx_get_edges_list(nsxmgr,working_dir,edgeType):
     return edgeList
 
 def nsx_lookup_edge_name(edge,edgeList):
-    ''' Used to convert edgeId to edgeType-edgeName 
+    ''' Used to convert edgeId to edgeType-edgeName
     '''
     print('Converting Edge IDs to Edge Names...')
     return edgeList[edge]
 
 def nsx_get_esg_config(nsxmgr,working_dir):
-    ''' Collects configuration of all NSX ESGs and save it as config.xml file. 
+    ''' Collects configuration of all NSX ESGs and save it as config.xml file.
         Generated configuration files will be used to perform a configuration checks.
     '''
     print('Getting NSX ESGs configuration...')
@@ -229,7 +236,7 @@ def nsx_get_esg_config(nsxmgr,working_dir):
         version_control(file_path)
 
 def nsx_get_dlr_config(nsxmgr,working_dir):
-    ''' Collects configuration of all NSX DLRs and save it as config.xml file. 
+    ''' Collects configuration of all NSX DLRs and save it as config.xml file.
         Generated configuration files will be used to perform a configuration checks.
     '''
     print('Getting NSX DLRs configuration...')
@@ -465,16 +472,16 @@ def nsx_py_check_nv_edge_bgp(data,edgeType):
     bgpKeepAliveTimers=config.get(edgeType,'bgpKeepAliveTimers').split(',')
     bgpPassword=config.get(edgeType,'bgpPassword')
 
-    if 'bgp' in data['edge']['features']['routing']: 
+    if 'bgp' in data['edge']['features']['routing']:
         if data['edge']['features']['routing']['bgp']['enabled']==bgpEnabledState:
             for bgpNeighbor in data['edge']['features']['routing']['bgp']['bgpNeighbours']['bgpNeighbour']:
-    #BGP timers 
+    #BGP timers
                 if isinstance(bgpNeighbor,dict):
                     if 'holdDownTimer' in bgpNeighbor:
                         if bgpNeighbor['holdDownTimer'] not in bgpHoldDownTimers:
                             NVEDGEBGPOOC+=[data['edge']['name']+'\tNeighbor:\t'+bgpNeighbor['ipAddress']+'\tBGP holdDown timer is misconfigured.']
                     else:
-                        NVEDGEBGPOOC+=[data['edge']['name']+'\tNeighbor:\t'+bgpNeighbor['ipAddress']+'\tBGP holdDown timer is set by default (180s).']    
+                        NVEDGEBGPOOC+=[data['edge']['name']+'\tNeighbor:\t'+bgpNeighbor['ipAddress']+'\tBGP holdDown timer is set by default (180s).']
                     if 'keepAliveTimer' in bgpNeighbor:
                         if bgpNeighbor['keepAliveTimer'] not in bgpKeepAliveTimers:
                             NVEDGEBGPOOC+=[data['edge']['name']+'\tNeighbor:\t'+bgpNeighbor['ipAddress']+'\tBGP keepAliveTimer is misconfigured.']
@@ -506,7 +513,7 @@ def nsx_py_check_nv_edge_bgp(data,edgeType):
             NVEDGEBGPOOC+=['\tBGP is disabled.']
     else:
         NVEDGEBGPOOC+=['\tBGP is disabled.']
-        
+
     if config.get('General','debugEnabled') == 'true':
         print(NVEDGEBGPOOC)
 
@@ -581,7 +588,7 @@ def nsx_py_check_nv_esg_ifs(data,edgeType):
                     NVESGIFOOC+=[data['edge']['name']+'\t'+vnic['name']+'\tProxyArp misconfiguration. Expected:\t'+enableProxyArp+'\tActual:\t'+vnic['enableProxyArp']]
                 if vnic['enableSendRedirects']!=enableSendRedirects:
                     NVESGIFOOC+=[data['edge']['name']+'\t'+vnic['name']+'\t SendRedirects misconfiguration. Expected:\t'+enableSendRedirects+'\tActual:\t'+vnic['enableSendRedirects']]
-        if interfaceTypeUplinkCounter!=numberOfUplinks and 'DEV' not in data['edge']['name']:
+        if interfaceTypeUplinkCounter!=numberOfUplinks:
             NVESGIFOOC+=[data['edge']['name']+'\tNumber of uplinks is not matching the ESG standard. Expected:\t'+str(numberOfUplinks)+'\t Actual:\t'+str(interfaceTypeUplinkCounter)]
     if config.get('General','debugEnabled') == 'true':
         print(NVESGIFOOC)
@@ -638,7 +645,7 @@ def nsx_py_check_nv_edges(nsxmgr,working_dir,nsxEdgeList):
                         nsx_py_check_nv_edge_ospf(data,edgeType)
                     if config.get(edgeType,'bgpCheckEnabled') == 'true':
                         nsx_py_check_nv_edge_bgp(data,edgeType)
-                        #nsx_cli_py_check_bgp_session_state(nsxmgr,edgeId,nsx_lookup_edge_name(edgeId,nsxEdgeList),edgeType)
+                        nsx_cli_py_check_bgp_session_state(nsxmgr,edgeId,nsx_lookup_edge_name(edgeId,nsxEdgeList),edgeType)
             if config.get(edgeType,'dhcpRelayCheckEnabled') == 'true':
                 nsx_py_check_nv_edge_dhcp_relay(data,edgeType)
             if edgeType == 'distributedRouter':
@@ -647,8 +654,8 @@ def nsx_py_check_nv_edges(nsxmgr,working_dir,nsxEdgeList):
             elif edgeType == 'gatewayServices':
                 if config.get(edgeType,'IfsCheckEnabled') == 'true':
                     nsx_py_check_nv_esg_ifs(data,edgeType)
-#    if config.get('nsxHostsStatus','checkEnabled') == 'true':
-        #nsx_py_check_nsx_hosts_agents(flags.NSXMGR,nsx_cli_get_nsx_hosts_list(flags.NSXMGR))
+    if config.get('nsxHostsStatus','checkEnabled') == 'true':
+        nsx_py_check_nsx_hosts_agents(flags.NSXMGR,nsx_cli_get_nsx_hosts_list(flags.NSXMGR))
 
 def nsx_py_check_nv(nsxmgr,working_dir):
     print('Starting checking of NSX components...')
@@ -656,10 +663,10 @@ def nsx_py_check_nv(nsxmgr,working_dir):
     if config.get('NvGeneral','checkEnabled') == 'true':
         nsx_py_check_nv_general(nsxmgr,working_dir)
         nsx_py_check_nv_edges(nsxmgr,working_dir,nsx_get_edges_list(nsxmgr,working_dir,'all'))
-    #if config.get('nsxManager','checkEnabled') == 'true':
-        #nsx_py_check_nsx_manager_config(nsxmgr)
-    #if config.get('NvControllers','checkEnabled') == 'true':
-        #nsx_py_check_controllers_config(nsxmgr)
+    if config.get('nsxManager','checkEnabled') == 'true':
+        nsx_py_check_nsx_manager_config(nsxmgr)
+    if config.get('NvControllers','checkEnabled') == 'true':
+        nsx_py_check_controllers_config(nsxmgr)
     if NSXMGROOC:
         header='NSX Manager: all configuration items (CIs) out of compliance with a baseline.'
         report+=[header]+NSXMGROOC
