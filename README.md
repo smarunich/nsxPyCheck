@@ -90,18 +90,34 @@ optional arguments:
   --collect        Perform configuration collection.
   --check          Perform configuration compliance check.
 ```
-To run nsxPyCheck:
+
+- To run nsxPyCheck:
+
 1. You have to update NSX Manager credentials in `nsxPyCheck.config` like described above.
 2. Run configuration collection.
-3. Run configuration check.
-
-Example
 ```
-Step 1: Edit nsxPyCheck.config
-
-Step 2: Run Collection
 ./nsxPyCheck.py --collect --dir test-nsx --nsxmgr 192.168.0.104 --collect
+```
+3. Run configuration check.
+```
+./nsxPyCheck.py --collect --dir test-nsx --nsxmgr 192.168.0.104 --check
+```
+4. Non-compliant items are saved in $nsxmgr-NSX-PyCheck.report under the defined folder (ex. test-nsx), if the enviroment fully complies to baseline no $nsxmgr-NSX-PyCheck.report will be generated. Report can be send over email as well, please refer to config files to enable it.
+```
+cat  test-nsx/192.168.0.104-NSX-PyCheck.report
+```
 
+# Example
+
+- Step 1: 
+```
+Edit nsxPyCheck.config
+```
+
+- Step 2: Run Collection
+
+`./nsxPyCheck.py --collect --dir test-nsx --nsxmgr 192.168.0.104 --collect`
+```
 nsxPyCheck.configetting Nv Edges General Info...
 Saving results into: test-nsx/192.168.0.104-GeneralInfoNsxEdges.xml
 Getting NSX DLRs configuration...
@@ -135,14 +151,209 @@ Getting NSX DFW Security Policies configuration...
 Saving results into: test-nsx/192.168.0.104-nsx-security-policies-config.xml
 Getting NSX DFW IPsets configuration...
 Saving results into: test-nsx/192.168.0.104-nsx-ipsets-config.xml
-
-Step 3: ./nsxPyCheck.py --collect --dir test-nsx --nsxmgr 192.168.0.104 --check
-
 ```
 
+- Step 3: Run Checks
+`./nsxPyCheck.py --collect --dir test-nsx --nsxmgr 192.168.0.104 --check`
+
+```
+Converting Edge IDs to Edge Names...
+Checking NSX Edge BGP Neighbors state...
+Checking NSX ESG Interfaces Configuration...
+Reading file: test-nsx/192.168.0.104-distributedRouter-t2-udlr-edge-f2f1db02-6840-4a0b-ac78-ce25e273bcf1-config.xml
+Checking NSX Edge Syslog Configuration...
+Checking NSX Edge Firewall Configuration...
+Checking General NSX Edge Routing Configuration...
+Checking NSX Edge Routing Static Routing Configuration...
+Checking NSX Edge OSPF Configuration...
+Checking NSX Edge BGP Configuration...
+Converting Edge IDs to Edge Names...
+Checking NSX Edge BGP Neighbors state...
+Checking NSX DHCP Relay Configuration...
+Checking NSX DLR Interfaces Configuration...
+Reading file: test-nsx/192.168.0.104-gatewayServices-t1-edge1-edge-3-config.xml
+Checking NSX Edge Syslog Configuration...
+Checking NSX Edge Firewall Configuration...
+Checking General NSX Edge Routing Configuration...
+Checking NSX Edge OSPF Configuration...
+Checking NSX Edge BGP Configuration...
+```
+- Step 4: Inspect Report
+`./nsxPyCheck.py --collect --dir test-nsx --nsxmgr 192.168.0.104 --check`
+```
+
+nsxPyCheck Report(s) for Saturday, 02. September 2017 11:50PM
 
 
+NSX Manager: all configuration items (CIs) out of compliance with a baseline.
 
+* NTP server is not set or NTP Misconfigured: 1 9 2 . 1 6 8 . 0 . 9
+* Syslog server is not set or Syslog Misconfigured: 192.168.0.130 514 UDP
+* NSX Manager connection to vCenter is down.
+
+NSX Prepared Host CP Communication Status: all configuration items (CIs) out of compliance with a baseline.
+
+* 192.168.0.101:Compute-A host communication issue: nsxMgrToFirewallAgentConn:DOWN nsxMgrToControlPlaneAgentConn:DOWN hostToControllerConn:NOT_AVAILABLE
+* 192.168.0.102:Compute-A host communication issue: nsxMgrToFirewallAgentConn:DOWN nsxMgrToControlPlaneAgentConn:DOWN hostToControllerConn:NOT_AVAILABLE
+
+GENERAL EDGE: Appliance Size, Cluster location, HA configuration, Appliance Version and Edge state: all configuration items (CIs) out of compliance with a baseline.
+
+* l2vpn-dlr01 compact NOT DEPLOYED 1 6.2.7 RED
+* l2vpn-server large NOT DEPLOYED 1 6.2.7 RED
+* t2-udlr compact NOT DEPLOYED 2 6.2.7 RED
+* t1-edge1 compact NOT DEPLOYED 2 6.2.7 RED
+* t1-udlr compact NOT DEPLOYED 2 6.2.7 RED
+* t2-edge compact NOT DEPLOYED 2 6.2.7 RED
+* t1-app1-web-lb compact NOT DEPLOYED 1 6.2.7 RED
+* t1-app1-app-lb compact NOT DEPLOYED 1 6.2.7 RED
+* t3-ecmp01 compact NOT DEPLOYED 1 6.2.7 RED
+* t3-ecmp02 compact NOT DEPLOYED 1 6.2.7 RED
+* t3-dev-edge01 compact NOT DEPLOYED 1 6.2.7 RED
+* t3-dev-dlr01 compact NOT DEPLOYED 1 6.2.7 RED
+* t3-dev-lb01 compact NOT DEPLOYED 1 6.2.7 RED
+
+NSX Edge Syslog: all configuration items (CIs) out of compliance with a baseline.
+
+* l2vpn-dlr01 Syslog is not configured.
+* l2vpn-server Syslog is not configured.
+* t2-udlr Syslog is not configured.
+* t1-edge1 Syslog is not configured.
+* t1-udlr Syslog is not configured.
+* t2-edge Syslog is not configured.
+* t1-app1-web-lb 3 true udp 192.168.0.130
+* t1-app1-app-lb Syslog is not configured.
+* t3-ecmp01 4 true udp 192.168.0.130
+* t3-ecmp02 3 true udp 192.168.0.130
+* t3-dev-edge01 3 true udp 192.168.0.130
+* t3-dev-dlr01 3 true udp 192.168.0.130
+* t3-dev-lb01 3 true udp 192.168.0.130
+
+NSX Edge Appliance Firewall: all configuration items (CIs) out of compliance with a baseline.
+
+* l2vpn-dlr01 NSX Edge Appliance Firewall state is misconfigured. Firewall State Enabled: true
+* t2-udlr NSX Edge Appliance Firewall state is misconfigured. Firewall State Enabled: true
+* t1-udlr NSX Edge Appliance Firewall state is misconfigured. Firewall State Enabled: true
+* t2-edge NSX Edge Appliance Firewall state is misconfigured. Firewall State Enabled: true
+* t1-app1-web-lb NSX Edge Appliance Firewall state is misconfigured. Firewall State Enabled: true
+* t1-app1-app-lb NSX Edge Appliance Firewall state is misconfigured. Firewall State Enabled: true
+* t3-dev-edge01 NSX Edge Appliance Firewall state is misconfigured. Firewall State Enabled: true
+* t3-dev-dlr01 NSX Edge Appliance Firewall state is misconfigured. Firewall State Enabled: true
+* t3-dev-lb01 NSX Edge Appliance Firewall state is misconfigured. Firewall State Enabled: true
+
+NSX General Routing: all configuration items (CIs) out of compliance with a baseline.
+
+* l2vpn-dlr01 ECMP State Enabled: false
+* l2vpn-dlr01 Routing Logging State Enabled: false
+* l2vpn-server ECMP State Enabled: false
+* l2vpn-server Routing Logging State Enabled: false
+* t2-udlr ECMP State Enabled: false
+* t1-udlr ECMP State Enabled: false
+* t1-udlr Routing Logging State Enabled: false
+* t2-edge ECMP State Enabled: false
+* t1-app1-web-lb ECMP State Enabled: false
+* t1-app1-web-lb Routing Logging State Enabled: false
+* t1-app1-app-lb ECMP State Enabled: false
+* t1-app1-app-lb Routing Logging State Enabled: false
+* t3-dev-dlr01 ECMP State Enabled: false
+* t3-dev-lb01 ECMP State Enabled: false
+* t3-dev-lb01 Routing Logging State Enabled: false
+ l2vpn-dlr01 ['0.0.0.0/0'] Route is missing.
+* t2-udlr ['0.0.0.0/0'] Route is missing.
+* t1-udlr ['0.0.0.0/0'] Route is missing.
+* t3-dev-dlr01 ['0.0.0.0/0'] Route is missing.
+
+NSX BGP: all configuration items (CIs) out of compliance with a baseline.
+
+* BGP is disabled.
+* BGP is disabled.
+* t1-edge1 Neighbor: 10.1.105.1 BGP holdDown timer is misconfigured.
+* t1-edge1 Neighbor: 10.1.105.1 BGP keepAliveTimer is misconfigured.
+* t1-edge1 Neighbor: 10.1.105.1 BGP Password is not set.
+* t1-edge1 Neighbor: 10.1.11.4 BGP holdDown timer is misconfigured.
+* t1-edge1 Neighbor: 10.1.11.4 BGP keepAliveTimer is misconfigured.
+* t1-edge1 Neighbor: 10.1.11.4 BGP Password is not set.
+* BGP Redistribution is misconfigured.
+* t2-edge Neighbor: 10.1.105.1 BGP holdDown timer is misconfigured.
+* t2-edge Neighbor: 10.1.105.1 BGP keepAliveTimer is misconfigured.
+* t2-edge Neighbor: 10.1.105.1 BGP Password is not set.
+* t2-edge Neighbor: 10.1.12.4 BGP holdDown timer is misconfigured.
+* t2-edge Neighbor: 10.1.12.4 BGP keepAliveTimer is misconfigured.
+* t2-edge Neighbor: 10.1.12.4 BGP Password is not set.
+* BGP Redistribution is misconfigured.
+* BGP is disabled.
+* BGP is disabled.
+* t3-ecmp01 Neighbor: 10.1.105.1 BGP holdDown timer is misconfigured.
+* t3-ecmp01 Neighbor: 10.1.105.1 BGP keepAliveTimer is misconfigured.
+* t3-ecmp01 Neighbor: 10.1.105.1 BGP Password is not set.
+* t3-ecmp01 Neighbor: 10.1.13.3 BGP holdDown timer is misconfigured.
+* t3-ecmp01 Neighbor: 10.1.13.3 BGP keepAliveTimer is misconfigured.
+* t3-ecmp01 Neighbor: 10.1.13.3 BGP Password is not set.
+* t3-ecmp01 BGP defaultOriginate is enabled.
+* t3-ecmp02 Neighbor: 10.1.105.1 BGP holdDown timer is misconfigured.
+* t3-ecmp02 Neighbor: 10.1.105.1 BGP keepAliveTimer is misconfigured.
+* t3-ecmp02 Neighbor: 10.1.105.1 BGP Password is not set.
+* t3-ecmp02 Neighbor: 10.1.13.3 BGP holdDown timer is misconfigured.
+* t3-ecmp02 Neighbor: 10.1.13.3 BGP keepAliveTimer is misconfigured.
+* t3-ecmp02 Neighbor: 10.1.13.3 BGP Password is not set.
+* t3-ecmp02 BGP defaultOriginate is enabled.
+* t3-dev-edge01 Neighbor: 172.16.30.4 BGP holdDown timer is misconfigured.
+* t3-dev-edge01 Neighbor: 172.16.30.4 BGP keepAliveTimer is misconfigured.
+* t3-dev-edge01 Neighbor: 172.16.30.4 BGP Password is not set.
+* t3-dev-edge01 Neighbor: 10.1.13.1 BGP holdDown timer is misconfigured.
+* t3-dev-edge01 Neighbor: 10.1.13.1 BGP keepAliveTimer is misconfigured.
+* t3-dev-edge01 Neighbor: 10.1.13.1 BGP Password is not set.
+* t3-dev-edge01 Neighbor: 10.1.13.2 BGP holdDown timer is misconfigured.
+* t3-dev-edge01 Neighbor: 10.1.13.2 BGP keepAliveTimer is misconfigured.
+* t3-dev-edge01 Neighbor: 10.1.13.2 BGP Password is not set.
+* t3-dev-edge01 BGP Redistribution is misconfigured. BGP to Static.
+* BGP is disabled.
+
+NSX DHCP Relay: all configuration items (CIs) out of compliance with a baseline.
+
+* l2vpn-dlr01 DHCP Relay is not configured.
+* t2-udlr DHCP Relay is not configured.
+* t1-udlr DHCP Relay is not configured.
+* t3-dev-dlr01 DHCP Secondary Relay is missing.
+
+NSX DLR Interfaces: all configuration items (CIs) out of compliance with a baseline.
+
+* l2vpn-dlr01 web MTU size misconfiguration or Interface is not Connected.
+* l2vpn-dlr01 app MTU size misconfiguration or Interface is not Connected.
+* l2vpn-dlr01 db MTU size misconfiguration or Interface is not Connected.
+* l2vpn-dlr01 Number of uplinks is not matching the DLR standard. Expected: 1 Actual: 0
+* t2-udlr uplink MTU size misconfiguration or Interface is not Connected.
+* t2-udlr web MTU size misconfiguration or Interface is not Connected.
+* t2-udlr app MTU size misconfiguration or Interface is not Connected.
+* t2-udlr db MTU size misconfiguration or Interface is not Connected.
+* t1-udlr uplink MTU size misconfiguration or Interface is not Connected.
+* t1-udlr web MTU size misconfiguration or Interface is not Connected.
+* t1-udlr app MTU size misconfiguration or Interface is not Connected.
+* t1-udlr db MTU size misconfiguration or Interface is not Connected.
+* t3-dev-dlr01 uplink MTU size misconfiguration or Interface is not Connected.
+* t3-dev-dlr01 web MTU size misconfiguration or Interface is not Connected.
+* t3-dev-dlr01 app MTU size misconfiguration or Interface is not Connected.
+* t3-dev-dlr01 db MTU size misconfiguration or Interface is not Connected.
+
+NSX ESG Interfaces: all configuration items (CIs) out of compliance with a baseline.
+
+* l2vpn-server uplink MTU size misconfiguration. Expected: 9000 Actual: 1500
+* l2vpn-server vnic1 MTU size misconfiguration. Expected: 9000 Actual: 1600
+* l2vpn-server Number of uplinks is not matching the ESG standard. Expected: 2 Actual: 1
+* t1-edge1 uplink MTU size misconfiguration. Expected: 9000 Actual: 1500
+* t1-edge1 downlink MTU size misconfiguration. Expected: 9000 Actual: 1500
+* t1-edge1 Number of uplinks is not matching the ESG standard. Expected: 2 Actual: 1
+* t2-edge uplink MTU size misconfiguration. Expected: 9000 Actual: 1500
+* t2-edge downlink MTU size misconfiguration. Expected: 9000 Actual: 1500
+* t2-edge Number of uplinks is not matching the ESG standard. Expected: 2 Actual: 1
+* t1-app1-web-lb web MTU size misconfiguration. Expected: 9000 Actual: 1500
+* t1-app1-web-lb Number of uplinks is not matching the ESG standard. Expected: 2 Actual: 1
+* t1-app1-app-lb app MTU size misconfiguration. Expected: 9000 Actual: 1500
+* t1-app1-app-lb Number of uplinks is not matching the ESG standard. Expected: 2 Actual: 0
+* t3-ecmp01 uplink MTU size misconfiguration. Expected: 9000 Actual: 1500
+* t3-ecmp01 t3-dev MTU size misconfiguration. Expected: 9000 Actual: 1500
+* t3-ecmp01 t3-dev SendRedirects misconfiguration. Expected: false Actual: true
+* t3-ecmp01 Number of uplinks is not matching the ESG standard. Expected: 2 Actual: 1
+```
 
 
 
