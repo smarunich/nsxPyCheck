@@ -106,6 +106,10 @@ optional arguments:
 ```
 cat  test-nsx/192.168.0.104-NSX-PyCheck.report
 ```
+5. (Optional) nsxPyCheck allows to execute NSX Central CLI command.
+```
+./nsxPyCheck.py --nsxmgr 192.168.0.104 --cli "show edge all"
+```
 
 # Examples
 
@@ -356,7 +360,31 @@ NSX ESG Interfaces: all configuration items (CIs) out of compliance with a basel
 * t3-ecmp01 t3-dev SendRedirects misconfiguration. Expected: false Actual: true
 * t3-ecmp01 Number of uplinks is not matching the ESG standard. Expected: 2 Actual: 1
 ```
-
+- Step 5 (Optional): Run NSX Central CLI
+`./nsxPyCheck.py --nsxmgr 192.168.0.104 --cli "show edge all"`
+```
+./nsxPyCheck.py --nsxmgr 192.168.0.104 --cli "show edge all"
+NOTE: CLI commands for Edge ServiceGateway(ESG) start with 'show edge'
+      CLI commands for Distributed Logical Router(DLR) Control VM start with 'show edge'
+      CLI commands for Distributed Logical Router(DLR) start with 'show logical-router'
+      Edges with version >= 6.2 support Central CLI and are listed here
+Legend:
+Edge Size: Compact - C, Large - L, X-Large - X, Quad-Large - Q
+Edge ID                                    Name                     Size Version Status
+edge-1                                     l2vpn-dlr01              C    6.2.7   GREEN
+edge-2                                     l2vpn-server             L    6.2.7   GREEN
+edge-f2f1db02-6840-4a0b-ac78-ce25e273bcf1  t2-udlr                  C    6.2.7   GREEN
+edge-3                                     t1-edge1                 C    6.2.7   GREEN
+edge-a3929bae-7d01-4550-94a4-570dfe4e5a09  t1-udlr                  C    6.2.7   GREEN
+edge-4                                     t2-edge                  C    6.2.7   GREEN
+edge-5                                     t1-app1-web-lb           C    6.2.7   GREEN
+edge-6                                     t1-app1-app-lb           C    6.2.7   GREEN
+edge-7                                     t3-ecmp01                C    6.2.7   GREEN
+edge-8                                     t3-ecmp02                C    6.2.7   GREEN
+edge-9                                     t3-dev-edge01            C    6.2.7   RED
+edge-10                                    t3-dev-dlr01             C    6.2.7   GREEN
+edge-11                                    t3-dev-lb01              C    6.2.7   GREEN
+```
 
 
 
