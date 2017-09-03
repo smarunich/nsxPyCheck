@@ -1,0 +1,832 @@
+<?xml version="1.0" ?>
+<pagedEdgeList>
+	<edgePage>
+		<pagingInfo>
+			<pageSize>256</pageSize>
+			<startIndex>0</startIndex>
+			<totalCount>13</totalCount>
+			<sortOrderAscending>true</sortOrderAscending>
+			<sortBy>id</sortBy>
+		</pagingInfo>
+		<edgeSummary>
+			<objectId>edge-1</objectId>
+			<objectTypeName>Edge</objectTypeName>
+			<vsmUuid>421957D2-6263-8BE8-DD56-6C87C2FCC643</vsmUuid>
+			<nodeId>7ac57c6c-b64b-4f20-8ea3-8f797e26fdac</nodeId>
+			<revision>16</revision>
+			<type>
+				<typeName>Edge</typeName>
+			</type>
+			<name>l2vpn-dlr01</name>
+			<clientHandle/>
+			<extendedAttributes/>
+			<isUniversal>false</isUniversal>
+			<universalRevision>0</universalRevision>
+			<isUpgradeAvailable>false</isUpgradeAvailable>
+			<id>edge-1</id>
+			<state>deployed</state>
+			<edgeType>distributedRouter</edgeType>
+			<datacenterMoid>datacenter-7</datacenterMoid>
+			<datacenterName>Datacenter-A</datacenterName>
+			<tenantId>default</tenantId>
+			<apiVersion>4.0</apiVersion>
+			<edgeStatus>GREEN</edgeStatus>
+			<numberOfConnectedVnics>3</numberOfConnectedVnics>
+			<appliancesSummary>
+				<vmVersion>6.2.7</vmVersion>
+				<vmBuildInfo>6.2.7-5343629</vmBuildInfo>
+				<applianceSize>compact</applianceSize>
+				<fqdn>NSX-edge-1</fqdn>
+				<numberOfDeployedVms>1</numberOfDeployedVms>
+				<activeVseHaIndex>0</activeVseHaIndex>
+				<vmMoidOfActiveVse>vm-1086</vmMoidOfActiveVse>
+				<vmNameOfActiveVse>l2vpn-dlr01-0</vmNameOfActiveVse>
+				<hostMoidOfActiveVse>host-40</hostMoidOfActiveVse>
+				<hostNameOfActiveVse>192.168.0.102</hostNameOfActiveVse>
+				<resourcePoolMoidOfActiveVse>resgroup-15</resourcePoolMoidOfActiveVse>
+				<resourcePoolNameOfActiveVse>Resources</resourcePoolNameOfActiveVse>
+				<dataStoreMoidOfActiveVse>datastore-961</dataStoreMoidOfActiveVse>
+				<dataStoreNameOfActiveVse>60U2NSX625-A</dataStoreNameOfActiveVse>
+				<statusFromVseUpdatedOn>1504403995490</statusFromVseUpdatedOn>
+				<communicationChannel>msgbus</communicationChannel>
+			</appliancesSummary>
+			<hypervisorAssist>false</hypervisorAssist>
+			<allowedActions>
+				<string>Change Log Level</string>
+				<string>Add Edge Appliance</string>
+				<string>Delete Edge Appliance</string>
+				<string>Edit Edge Appliance</string>
+				<string>Edit CLI Credentials</string>
+				<string>Force Sync</string>
+				<string>Redeploy Edge</string>
+				<string>Change Edge Appliance Core Dump Configuration</string>
+				<string>Edit Highavailability</string>
+				<string>Edit Dns</string>
+				<string>Edit Syslog</string>
+				<string>Disable SSH</string>
+				<string>Download Edge TechSupport Logs</string>
+			</allowedActions>
+			<edgeAssistId>10000</edgeAssistId>
+			<edgeAssistInstanceName>default+edge-1</edgeAssistInstanceName>
+			<lrouterUuid>2295e12c-5710-46e1-9198-e9de941dd2a5</lrouterUuid>
+			<logicalRouterScopes>
+				<logicalRouterScope>
+					<type>TransportZone</type>
+					<id>vdnscope-2</id>
+				</logicalRouterScope>
+			</logicalRouterScopes>
+		</edgeSummary>
+		<edgeSummary>
+			<objectId>edge-2</objectId>
+			<objectTypeName>Edge</objectTypeName>
+			<vsmUuid>421957D2-6263-8BE8-DD56-6C87C2FCC643</vsmUuid>
+			<nodeId>7ac57c6c-b64b-4f20-8ea3-8f797e26fdac</nodeId>
+			<revision>14</revision>
+			<type>
+				<typeName>Edge</typeName>
+			</type>
+			<name>l2vpn-server</name>
+			<clientHandle/>
+			<extendedAttributes/>
+			<isUniversal>false</isUniversal>
+			<universalRevision>0</universalRevision>
+			<isUpgradeAvailable>false</isUpgradeAvailable>
+			<id>edge-2</id>
+			<state>deployed</state>
+			<edgeType>gatewayServices</edgeType>
+			<datacenterMoid>datacenter-7</datacenterMoid>
+			<datacenterName>Datacenter-A</datacenterName>
+			<tenantId>default</tenantId>
+			<apiVersion>4.0</apiVersion>
+			<edgeStatus>GREEN</edgeStatus>
+			<numberOfConnectedVnics>6</numberOfConnectedVnics>
+			<appliancesSummary>
+				<vmVersion>6.2.7</vmVersion>
+				<vmBuildInfo>6.2.7-5343629</vmBuildInfo>
+				<applianceSize>large</applianceSize>
+				<fqdn>NSX-edge-2</fqdn>
+				<numberOfDeployedVms>1</numberOfDeployedVms>
+				<activeVseHaIndex>0</activeVseHaIndex>
+				<vmMoidOfActiveVse>vm-1101</vmMoidOfActiveVse>
+				<vmNameOfActiveVse>l2vpn-server-0</vmNameOfActiveVse>
+				<hostMoidOfActiveVse>host-40</hostMoidOfActiveVse>
+				<hostNameOfActiveVse>192.168.0.102</hostNameOfActiveVse>
+				<resourcePoolMoidOfActiveVse>resgroup-15</resourcePoolMoidOfActiveVse>
+				<resourcePoolNameOfActiveVse>Resources</resourcePoolNameOfActiveVse>
+				<dataStoreMoidOfActiveVse>datastore-961</dataStoreMoidOfActiveVse>
+				<dataStoreNameOfActiveVse>60U2NSX625-A</dataStoreNameOfActiveVse>
+				<statusFromVseUpdatedOn>1504404012042</statusFromVseUpdatedOn>
+				<communicationChannel>msgbus</communicationChannel>
+			</appliancesSummary>
+			<hypervisorAssist>false</hypervisorAssist>
+			<allowedActions>
+				<string>Change Log Level</string>
+				<string>Add Edge Appliance</string>
+				<string>Delete Edge Appliance</string>
+				<string>Edit Edge Appliance</string>
+				<string>Edit CLI Credentials</string>
+				<string>Change edge appliance size</string>
+				<string>Force Sync</string>
+				<string>Redeploy Edge</string>
+				<string>Change Edge Appliance Core Dump Configuration</string>
+				<string>Enable hypervisorAssist</string>
+				<string>Edit Highavailability</string>
+				<string>Edit Dns</string>
+				<string>Edit Syslog</string>
+				<string>Edit Automatic Rule Generation Settings</string>
+				<string>Disable SSH</string>
+				<string>Download Edge TechSupport Logs</string>
+			</allowedActions>
+		</edgeSummary>
+		<edgeSummary>
+			<objectId>edge-f2f1db02-6840-4a0b-ac78-ce25e273bcf1</objectId>
+			<objectTypeName>Edge</objectTypeName>
+			<vsmUuid>421957D2-6263-8BE8-DD56-6C87C2FCC643</vsmUuid>
+			<nodeId>7ac57c6c-b64b-4f20-8ea3-8f797e26fdac</nodeId>
+			<revision>27</revision>
+			<type>
+				<typeName>Edge</typeName>
+			</type>
+			<name>t2-udlr</name>
+			<clientHandle/>
+			<extendedAttributes/>
+			<isUniversal>true</isUniversal>
+			<universalRevision>0</universalRevision>
+			<isUpgradeAvailable>false</isUpgradeAvailable>
+			<id>edge-f2f1db02-6840-4a0b-ac78-ce25e273bcf1</id>
+			<state>deployed</state>
+			<edgeType>distributedRouter</edgeType>
+			<datacenterMoid>datacenter-7</datacenterMoid>
+			<datacenterName>Datacenter-A</datacenterName>
+			<tenantId>default</tenantId>
+			<apiVersion>4.0</apiVersion>
+			<edgeStatus>GREEN</edgeStatus>
+			<numberOfConnectedVnics>4</numberOfConnectedVnics>
+			<appliancesSummary>
+				<vmVersion>6.2.7</vmVersion>
+				<vmBuildInfo>6.2.7-5343629</vmBuildInfo>
+				<applianceSize>compact</applianceSize>
+				<fqdn>NSX-edge-f2f1db02-6840-4a0b-ac78-ce25e273bcf1</fqdn>
+				<numberOfDeployedVms>2</numberOfDeployedVms>
+				<activeVseHaIndex>0</activeVseHaIndex>
+				<vmMoidOfActiveVse>vm-1087</vmMoidOfActiveVse>
+				<vmNameOfActiveVse>edge-f2f1db02-6840-4a0b-ac78-ce25e273bcf1-0-t2-udlr</vmNameOfActiveVse>
+				<hostMoidOfActiveVse>host-36</hostMoidOfActiveVse>
+				<hostNameOfActiveVse>192.168.0.101</hostNameOfActiveVse>
+				<resourcePoolMoidOfActiveVse>resgroup-15</resourcePoolMoidOfActiveVse>
+				<resourcePoolNameOfActiveVse>Resources</resourcePoolNameOfActiveVse>
+				<dataStoreMoidOfActiveVse>datastore-961</dataStoreMoidOfActiveVse>
+				<dataStoreNameOfActiveVse>60U2NSX625-A</dataStoreNameOfActiveVse>
+				<statusFromVseUpdatedOn>1504404023020</statusFromVseUpdatedOn>
+				<communicationChannel>msgbus-msgbus</communicationChannel>
+			</appliancesSummary>
+			<hypervisorAssist>false</hypervisorAssist>
+			<allowedActions>
+				<string>Change Log Level</string>
+				<string>Add Edge Appliance</string>
+				<string>Delete Edge Appliance</string>
+				<string>Edit Edge Appliance</string>
+				<string>Edit CLI Credentials</string>
+				<string>Force Sync</string>
+				<string>Redeploy Edge</string>
+				<string>Change Edge Appliance Core Dump Configuration</string>
+				<string>Edit Highavailability</string>
+				<string>Edit Dns</string>
+				<string>Edit Syslog</string>
+				<string>Disable SSH</string>
+				<string>Download Edge TechSupport Logs</string>
+			</allowedActions>
+			<edgeAssistId>30000</edgeAssistId>
+			<edgeAssistInstanceName>default+edge-f2f1db02-6840-4a0b-ac78-ce25e273bcf1</edgeAssistInstanceName>
+			<lrouterUuid>22cd39a5-5d5b-422f-bc50-f03b34ac7936</lrouterUuid>
+			<logicalRouterScopes>
+				<logicalRouterScope>
+					<type>TransportZone</type>
+					<id>universalvdnscope</id>
+				</logicalRouterScope>
+			</logicalRouterScopes>
+		</edgeSummary>
+		<edgeSummary>
+			<objectId>edge-3</objectId>
+			<objectTypeName>Edge</objectTypeName>
+			<vsmUuid>421957D2-6263-8BE8-DD56-6C87C2FCC643</vsmUuid>
+			<nodeId>7ac57c6c-b64b-4f20-8ea3-8f797e26fdac</nodeId>
+			<revision>30</revision>
+			<type>
+				<typeName>Edge</typeName>
+			</type>
+			<name>t1-edge1</name>
+			<clientHandle/>
+			<extendedAttributes/>
+			<isUniversal>false</isUniversal>
+			<universalRevision>0</universalRevision>
+			<isUpgradeAvailable>false</isUpgradeAvailable>
+			<id>edge-3</id>
+			<state>deployed</state>
+			<edgeType>gatewayServices</edgeType>
+			<datacenterMoid>datacenter-7</datacenterMoid>
+			<datacenterName>Datacenter-A</datacenterName>
+			<tenantId>default</tenantId>
+			<apiVersion>4.0</apiVersion>
+			<edgeStatus>GREEN</edgeStatus>
+			<numberOfConnectedVnics>2</numberOfConnectedVnics>
+			<appliancesSummary>
+				<vmVersion>6.2.7</vmVersion>
+				<vmBuildInfo>6.2.7-5343629</vmBuildInfo>
+				<applianceSize>compact</applianceSize>
+				<fqdn>NSX-edge-3</fqdn>
+				<numberOfDeployedVms>2</numberOfDeployedVms>
+				<activeVseHaIndex>0</activeVseHaIndex>
+				<vmMoidOfActiveVse>vm-1089</vmMoidOfActiveVse>
+				<vmNameOfActiveVse>t1-edge1-0</vmNameOfActiveVse>
+				<hostMoidOfActiveVse>host-40</hostMoidOfActiveVse>
+				<hostNameOfActiveVse>192.168.0.102</hostNameOfActiveVse>
+				<resourcePoolMoidOfActiveVse>resgroup-15</resourcePoolMoidOfActiveVse>
+				<resourcePoolNameOfActiveVse>Resources</resourcePoolNameOfActiveVse>
+				<dataStoreMoidOfActiveVse>datastore-961</dataStoreMoidOfActiveVse>
+				<dataStoreNameOfActiveVse>60U2NSX625-A</dataStoreNameOfActiveVse>
+				<statusFromVseUpdatedOn>1504403975325</statusFromVseUpdatedOn>
+				<communicationChannel>msgbus-msgbus</communicationChannel>
+			</appliancesSummary>
+			<hypervisorAssist>false</hypervisorAssist>
+			<allowedActions>
+				<string>Change Log Level</string>
+				<string>Add Edge Appliance</string>
+				<string>Delete Edge Appliance</string>
+				<string>Edit Edge Appliance</string>
+				<string>Edit CLI Credentials</string>
+				<string>Change edge appliance size</string>
+				<string>Force Sync</string>
+				<string>Redeploy Edge</string>
+				<string>Change Edge Appliance Core Dump Configuration</string>
+				<string>Enable hypervisorAssist</string>
+				<string>Edit Highavailability</string>
+				<string>Edit Dns</string>
+				<string>Edit Syslog</string>
+				<string>Edit Automatic Rule Generation Settings</string>
+				<string>Disable SSH</string>
+				<string>Download Edge TechSupport Logs</string>
+			</allowedActions>
+		</edgeSummary>
+		<edgeSummary>
+			<objectId>edge-a3929bae-7d01-4550-94a4-570dfe4e5a09</objectId>
+			<objectTypeName>Edge</objectTypeName>
+			<vsmUuid>421957D2-6263-8BE8-DD56-6C87C2FCC643</vsmUuid>
+			<nodeId>7ac57c6c-b64b-4f20-8ea3-8f797e26fdac</nodeId>
+			<revision>24</revision>
+			<type>
+				<typeName>Edge</typeName>
+			</type>
+			<name>t1-udlr</name>
+			<clientHandle/>
+			<extendedAttributes/>
+			<isUniversal>true</isUniversal>
+			<universalRevision>0</universalRevision>
+			<isUpgradeAvailable>false</isUpgradeAvailable>
+			<id>edge-a3929bae-7d01-4550-94a4-570dfe4e5a09</id>
+			<state>deployed</state>
+			<edgeType>distributedRouter</edgeType>
+			<datacenterMoid>datacenter-7</datacenterMoid>
+			<datacenterName>Datacenter-A</datacenterName>
+			<tenantId>default</tenantId>
+			<apiVersion>4.0</apiVersion>
+			<edgeStatus>GREEN</edgeStatus>
+			<numberOfConnectedVnics>4</numberOfConnectedVnics>
+			<appliancesSummary>
+				<vmVersion>6.2.7</vmVersion>
+				<vmBuildInfo>6.2.7-5343629</vmBuildInfo>
+				<applianceSize>compact</applianceSize>
+				<fqdn>NSX-edge-a3929bae-7d01-4550-94a4-570dfe4e5a09</fqdn>
+				<numberOfDeployedVms>2</numberOfDeployedVms>
+				<activeVseHaIndex>0</activeVseHaIndex>
+				<vmMoidOfActiveVse>vm-1093</vmMoidOfActiveVse>
+				<vmNameOfActiveVse>edge-a3929bae-7d01-4550-94a4-570dfe4e5a09-0-t1-udlr</vmNameOfActiveVse>
+				<hostMoidOfActiveVse>host-36</hostMoidOfActiveVse>
+				<hostNameOfActiveVse>192.168.0.101</hostNameOfActiveVse>
+				<resourcePoolMoidOfActiveVse>resgroup-15</resourcePoolMoidOfActiveVse>
+				<resourcePoolNameOfActiveVse>Resources</resourcePoolNameOfActiveVse>
+				<dataStoreMoidOfActiveVse>datastore-961</dataStoreMoidOfActiveVse>
+				<dataStoreNameOfActiveVse>60U2NSX625-A</dataStoreNameOfActiveVse>
+				<statusFromVseUpdatedOn>1504403975672</statusFromVseUpdatedOn>
+				<communicationChannel>msgbus-msgbus</communicationChannel>
+			</appliancesSummary>
+			<hypervisorAssist>false</hypervisorAssist>
+			<allowedActions>
+				<string>Change Log Level</string>
+				<string>Add Edge Appliance</string>
+				<string>Delete Edge Appliance</string>
+				<string>Edit Edge Appliance</string>
+				<string>Edit CLI Credentials</string>
+				<string>Force Sync</string>
+				<string>Redeploy Edge</string>
+				<string>Change Edge Appliance Core Dump Configuration</string>
+				<string>Edit Highavailability</string>
+				<string>Edit Dns</string>
+				<string>Edit Syslog</string>
+				<string>Disable SSH</string>
+				<string>Download Edge TechSupport Logs</string>
+			</allowedActions>
+			<edgeAssistId>30001</edgeAssistId>
+			<edgeAssistInstanceName>default+edge-a3929bae-7d01-4550-94a4-570dfe4e5a09</edgeAssistInstanceName>
+			<lrouterUuid>d120b630-014f-49ad-b3be-635bed490794</lrouterUuid>
+			<logicalRouterScopes>
+				<logicalRouterScope>
+					<type>TransportZone</type>
+					<id>universalvdnscope</id>
+				</logicalRouterScope>
+			</logicalRouterScopes>
+		</edgeSummary>
+		<edgeSummary>
+			<objectId>edge-4</objectId>
+			<objectTypeName>Edge</objectTypeName>
+			<vsmUuid>421957D2-6263-8BE8-DD56-6C87C2FCC643</vsmUuid>
+			<nodeId>7ac57c6c-b64b-4f20-8ea3-8f797e26fdac</nodeId>
+			<revision>12</revision>
+			<type>
+				<typeName>Edge</typeName>
+			</type>
+			<name>t2-edge</name>
+			<clientHandle/>
+			<extendedAttributes/>
+			<isUniversal>false</isUniversal>
+			<universalRevision>0</universalRevision>
+			<isUpgradeAvailable>false</isUpgradeAvailable>
+			<id>edge-4</id>
+			<state>deployed</state>
+			<edgeType>gatewayServices</edgeType>
+			<datacenterMoid>datacenter-7</datacenterMoid>
+			<datacenterName>Datacenter-A</datacenterName>
+			<tenantId>default</tenantId>
+			<apiVersion>4.0</apiVersion>
+			<edgeStatus>GREEN</edgeStatus>
+			<numberOfConnectedVnics>2</numberOfConnectedVnics>
+			<appliancesSummary>
+				<vmVersion>6.2.7</vmVersion>
+				<vmBuildInfo>6.2.7-5343629</vmBuildInfo>
+				<applianceSize>compact</applianceSize>
+				<fqdn>NSX-edge-4</fqdn>
+				<numberOfDeployedVms>2</numberOfDeployedVms>
+				<activeVseHaIndex>1</activeVseHaIndex>
+				<vmMoidOfActiveVse>vm-1092</vmMoidOfActiveVse>
+				<vmNameOfActiveVse>t2-edge-1</vmNameOfActiveVse>
+				<hostMoidOfActiveVse>host-40</hostMoidOfActiveVse>
+				<hostNameOfActiveVse>192.168.0.102</hostNameOfActiveVse>
+				<resourcePoolMoidOfActiveVse>resgroup-15</resourcePoolMoidOfActiveVse>
+				<resourcePoolNameOfActiveVse>Resources</resourcePoolNameOfActiveVse>
+				<dataStoreMoidOfActiveVse>datastore-961</dataStoreMoidOfActiveVse>
+				<dataStoreNameOfActiveVse>60U2NSX625-A</dataStoreNameOfActiveVse>
+				<statusFromVseUpdatedOn>1504403974786</statusFromVseUpdatedOn>
+				<communicationChannel>msgbus-msgbus</communicationChannel>
+			</appliancesSummary>
+			<hypervisorAssist>false</hypervisorAssist>
+			<allowedActions>
+				<string>Change Log Level</string>
+				<string>Add Edge Appliance</string>
+				<string>Delete Edge Appliance</string>
+				<string>Edit Edge Appliance</string>
+				<string>Edit CLI Credentials</string>
+				<string>Change edge appliance size</string>
+				<string>Force Sync</string>
+				<string>Redeploy Edge</string>
+				<string>Change Edge Appliance Core Dump Configuration</string>
+				<string>Enable hypervisorAssist</string>
+				<string>Edit Highavailability</string>
+				<string>Edit Dns</string>
+				<string>Edit Syslog</string>
+				<string>Edit Automatic Rule Generation Settings</string>
+				<string>Disable SSH</string>
+				<string>Download Edge TechSupport Logs</string>
+			</allowedActions>
+		</edgeSummary>
+		<edgeSummary>
+			<objectId>edge-5</objectId>
+			<objectTypeName>Edge</objectTypeName>
+			<vsmUuid>421957D2-6263-8BE8-DD56-6C87C2FCC643</vsmUuid>
+			<nodeId>7ac57c6c-b64b-4f20-8ea3-8f797e26fdac</nodeId>
+			<revision>18</revision>
+			<type>
+				<typeName>Edge</typeName>
+			</type>
+			<name>t1-app1-web-lb</name>
+			<clientHandle/>
+			<extendedAttributes/>
+			<isUniversal>false</isUniversal>
+			<universalRevision>0</universalRevision>
+			<isUpgradeAvailable>false</isUpgradeAvailable>
+			<id>edge-5</id>
+			<state>deployed</state>
+			<edgeType>gatewayServices</edgeType>
+			<datacenterMoid>datacenter-7</datacenterMoid>
+			<datacenterName>Datacenter-A</datacenterName>
+			<tenantId>default</tenantId>
+			<apiVersion>4.0</apiVersion>
+			<edgeStatus>GREEN</edgeStatus>
+			<numberOfConnectedVnics>1</numberOfConnectedVnics>
+			<appliancesSummary>
+				<vmVersion>6.2.7</vmVersion>
+				<vmBuildInfo>6.2.7-5343629</vmBuildInfo>
+				<applianceSize>compact</applianceSize>
+				<fqdn>NSX-edge-5</fqdn>
+				<numberOfDeployedVms>1</numberOfDeployedVms>
+				<activeVseHaIndex>0</activeVseHaIndex>
+				<vmMoidOfActiveVse>vm-1100</vmMoidOfActiveVse>
+				<vmNameOfActiveVse>t1-app1-web-lb-0</vmNameOfActiveVse>
+				<hostMoidOfActiveVse>host-40</hostMoidOfActiveVse>
+				<hostNameOfActiveVse>192.168.0.102</hostNameOfActiveVse>
+				<resourcePoolMoidOfActiveVse>resgroup-15</resourcePoolMoidOfActiveVse>
+				<resourcePoolNameOfActiveVse>Resources</resourcePoolNameOfActiveVse>
+				<dataStoreMoidOfActiveVse>datastore-961</dataStoreMoidOfActiveVse>
+				<dataStoreNameOfActiveVse>60U2NSX625-A</dataStoreNameOfActiveVse>
+				<statusFromVseUpdatedOn>1504403997754</statusFromVseUpdatedOn>
+				<communicationChannel>msgbus</communicationChannel>
+			</appliancesSummary>
+			<hypervisorAssist>false</hypervisorAssist>
+			<allowedActions>
+				<string>Change Log Level</string>
+				<string>Add Edge Appliance</string>
+				<string>Delete Edge Appliance</string>
+				<string>Edit Edge Appliance</string>
+				<string>Edit CLI Credentials</string>
+				<string>Change edge appliance size</string>
+				<string>Force Sync</string>
+				<string>Redeploy Edge</string>
+				<string>Change Edge Appliance Core Dump Configuration</string>
+				<string>Enable hypervisorAssist</string>
+				<string>Edit Highavailability</string>
+				<string>Edit Dns</string>
+				<string>Edit Syslog</string>
+				<string>Edit Automatic Rule Generation Settings</string>
+				<string>Enable SSH</string>
+				<string>Download Edge TechSupport Logs</string>
+			</allowedActions>
+		</edgeSummary>
+		<edgeSummary>
+			<objectId>edge-6</objectId>
+			<objectTypeName>Edge</objectTypeName>
+			<vsmUuid>421957D2-6263-8BE8-DD56-6C87C2FCC643</vsmUuid>
+			<nodeId>7ac57c6c-b64b-4f20-8ea3-8f797e26fdac</nodeId>
+			<revision>7</revision>
+			<type>
+				<typeName>Edge</typeName>
+			</type>
+			<name>t1-app1-app-lb</name>
+			<clientHandle/>
+			<extendedAttributes/>
+			<isUniversal>false</isUniversal>
+			<universalRevision>0</universalRevision>
+			<isUpgradeAvailable>false</isUpgradeAvailable>
+			<id>edge-6</id>
+			<state>deployed</state>
+			<edgeType>gatewayServices</edgeType>
+			<datacenterMoid>datacenter-7</datacenterMoid>
+			<datacenterName>Datacenter-A</datacenterName>
+			<tenantId>default</tenantId>
+			<apiVersion>4.0</apiVersion>
+			<edgeStatus>GREEN</edgeStatus>
+			<numberOfConnectedVnics>1</numberOfConnectedVnics>
+			<appliancesSummary>
+				<vmVersion>6.2.7</vmVersion>
+				<vmBuildInfo>6.2.7-5343629</vmBuildInfo>
+				<applianceSize>compact</applianceSize>
+				<fqdn>NSX-edge-6</fqdn>
+				<numberOfDeployedVms>1</numberOfDeployedVms>
+				<activeVseHaIndex>0</activeVseHaIndex>
+				<vmMoidOfActiveVse>vm-1099</vmMoidOfActiveVse>
+				<vmNameOfActiveVse>t1-app1-app-lb-0</vmNameOfActiveVse>
+				<hostMoidOfActiveVse>host-36</hostMoidOfActiveVse>
+				<hostNameOfActiveVse>192.168.0.101</hostNameOfActiveVse>
+				<resourcePoolMoidOfActiveVse>resgroup-15</resourcePoolMoidOfActiveVse>
+				<resourcePoolNameOfActiveVse>Resources</resourcePoolNameOfActiveVse>
+				<dataStoreMoidOfActiveVse>datastore-961</dataStoreMoidOfActiveVse>
+				<dataStoreNameOfActiveVse>60U2NSX625-A</dataStoreNameOfActiveVse>
+				<statusFromVseUpdatedOn>1504403985404</statusFromVseUpdatedOn>
+				<communicationChannel>msgbus</communicationChannel>
+			</appliancesSummary>
+			<hypervisorAssist>false</hypervisorAssist>
+			<allowedActions>
+				<string>Change Log Level</string>
+				<string>Add Edge Appliance</string>
+				<string>Delete Edge Appliance</string>
+				<string>Edit Edge Appliance</string>
+				<string>Edit CLI Credentials</string>
+				<string>Change edge appliance size</string>
+				<string>Force Sync</string>
+				<string>Redeploy Edge</string>
+				<string>Change Edge Appliance Core Dump Configuration</string>
+				<string>Enable hypervisorAssist</string>
+				<string>Edit Highavailability</string>
+				<string>Edit Dns</string>
+				<string>Edit Syslog</string>
+				<string>Edit Automatic Rule Generation Settings</string>
+				<string>Disable SSH</string>
+				<string>Download Edge TechSupport Logs</string>
+			</allowedActions>
+		</edgeSummary>
+		<edgeSummary>
+			<objectId>edge-7</objectId>
+			<objectTypeName>Edge</objectTypeName>
+			<vsmUuid>421957D2-6263-8BE8-DD56-6C87C2FCC643</vsmUuid>
+			<nodeId>7ac57c6c-b64b-4f20-8ea3-8f797e26fdac</nodeId>
+			<revision>19</revision>
+			<type>
+				<typeName>Edge</typeName>
+			</type>
+			<name>t3-ecmp01</name>
+			<clientHandle/>
+			<extendedAttributes/>
+			<isUniversal>false</isUniversal>
+			<universalRevision>0</universalRevision>
+			<isUpgradeAvailable>false</isUpgradeAvailable>
+			<id>edge-7</id>
+			<state>deployed</state>
+			<edgeType>gatewayServices</edgeType>
+			<datacenterMoid>datacenter-7</datacenterMoid>
+			<datacenterName>Datacenter-A</datacenterName>
+			<tenantId>default</tenantId>
+			<apiVersion>4.0</apiVersion>
+			<edgeStatus>GREEN</edgeStatus>
+			<numberOfConnectedVnics>2</numberOfConnectedVnics>
+			<appliancesSummary>
+				<vmVersion>6.2.7</vmVersion>
+				<vmBuildInfo>6.2.7-5343629</vmBuildInfo>
+				<applianceSize>compact</applianceSize>
+				<fqdn>NSX-edge-7</fqdn>
+				<numberOfDeployedVms>1</numberOfDeployedVms>
+				<activeVseHaIndex>0</activeVseHaIndex>
+				<vmMoidOfActiveVse>vm-1098</vmMoidOfActiveVse>
+				<vmNameOfActiveVse>t3-ecmp01-0</vmNameOfActiveVse>
+				<hostMoidOfActiveVse>host-40</hostMoidOfActiveVse>
+				<hostNameOfActiveVse>192.168.0.102</hostNameOfActiveVse>
+				<resourcePoolMoidOfActiveVse>resgroup-15</resourcePoolMoidOfActiveVse>
+				<resourcePoolNameOfActiveVse>Resources</resourcePoolNameOfActiveVse>
+				<dataStoreMoidOfActiveVse>datastore-1022</dataStoreMoidOfActiveVse>
+				<dataStoreNameOfActiveVse>vol2-dc-a</dataStoreNameOfActiveVse>
+				<statusFromVseUpdatedOn>1504403999874</statusFromVseUpdatedOn>
+				<communicationChannel>msgbus</communicationChannel>
+			</appliancesSummary>
+			<hypervisorAssist>false</hypervisorAssist>
+			<allowedActions>
+				<string>Change Log Level</string>
+				<string>Add Edge Appliance</string>
+				<string>Delete Edge Appliance</string>
+				<string>Edit Edge Appliance</string>
+				<string>Edit CLI Credentials</string>
+				<string>Change edge appliance size</string>
+				<string>Force Sync</string>
+				<string>Redeploy Edge</string>
+				<string>Change Edge Appliance Core Dump Configuration</string>
+				<string>Enable hypervisorAssist</string>
+				<string>Edit Highavailability</string>
+				<string>Edit Dns</string>
+				<string>Edit Syslog</string>
+				<string>Edit Automatic Rule Generation Settings</string>
+				<string>Disable SSH</string>
+				<string>Download Edge TechSupport Logs</string>
+			</allowedActions>
+		</edgeSummary>
+		<edgeSummary>
+			<objectId>edge-8</objectId>
+			<objectTypeName>Edge</objectTypeName>
+			<vsmUuid>421957D2-6263-8BE8-DD56-6C87C2FCC643</vsmUuid>
+			<nodeId>7ac57c6c-b64b-4f20-8ea3-8f797e26fdac</nodeId>
+			<revision>17</revision>
+			<type>
+				<typeName>Edge</typeName>
+			</type>
+			<name>t3-ecmp02</name>
+			<clientHandle/>
+			<extendedAttributes/>
+			<isUniversal>false</isUniversal>
+			<universalRevision>0</universalRevision>
+			<isUpgradeAvailable>false</isUpgradeAvailable>
+			<id>edge-8</id>
+			<state>deployed</state>
+			<edgeType>gatewayServices</edgeType>
+			<datacenterMoid>datacenter-7</datacenterMoid>
+			<datacenterName>Datacenter-A</datacenterName>
+			<tenantId>default</tenantId>
+			<apiVersion>4.0</apiVersion>
+			<edgeStatus>GREEN</edgeStatus>
+			<numberOfConnectedVnics>2</numberOfConnectedVnics>
+			<appliancesSummary>
+				<vmVersion>6.2.7</vmVersion>
+				<vmBuildInfo>6.2.7-5343629</vmBuildInfo>
+				<applianceSize>compact</applianceSize>
+				<fqdn>NSX-edge-8</fqdn>
+				<numberOfDeployedVms>1</numberOfDeployedVms>
+				<activeVseHaIndex>0</activeVseHaIndex>
+				<vmMoidOfActiveVse>vm-1097</vmMoidOfActiveVse>
+				<vmNameOfActiveVse>t3-ecmp02-0</vmNameOfActiveVse>
+				<hostMoidOfActiveVse>host-36</hostMoidOfActiveVse>
+				<hostNameOfActiveVse>192.168.0.101</hostNameOfActiveVse>
+				<resourcePoolMoidOfActiveVse>resgroup-15</resourcePoolMoidOfActiveVse>
+				<resourcePoolNameOfActiveVse>Resources</resourcePoolNameOfActiveVse>
+				<dataStoreMoidOfActiveVse>datastore-1022</dataStoreMoidOfActiveVse>
+				<dataStoreNameOfActiveVse>vol2-dc-a</dataStoreNameOfActiveVse>
+				<statusFromVseUpdatedOn>1504403988416</statusFromVseUpdatedOn>
+				<communicationChannel>msgbus</communicationChannel>
+			</appliancesSummary>
+			<hypervisorAssist>false</hypervisorAssist>
+			<allowedActions>
+				<string>Change Log Level</string>
+				<string>Add Edge Appliance</string>
+				<string>Delete Edge Appliance</string>
+				<string>Edit Edge Appliance</string>
+				<string>Edit CLI Credentials</string>
+				<string>Change edge appliance size</string>
+				<string>Force Sync</string>
+				<string>Redeploy Edge</string>
+				<string>Change Edge Appliance Core Dump Configuration</string>
+				<string>Enable hypervisorAssist</string>
+				<string>Edit Highavailability</string>
+				<string>Edit Dns</string>
+				<string>Edit Syslog</string>
+				<string>Edit Automatic Rule Generation Settings</string>
+				<string>Disable SSH</string>
+				<string>Download Edge TechSupport Logs</string>
+			</allowedActions>
+		</edgeSummary>
+		<edgeSummary>
+			<objectId>edge-9</objectId>
+			<objectTypeName>Edge</objectTypeName>
+			<vsmUuid>421957D2-6263-8BE8-DD56-6C87C2FCC643</vsmUuid>
+			<nodeId>7ac57c6c-b64b-4f20-8ea3-8f797e26fdac</nodeId>
+			<revision>32</revision>
+			<type>
+				<typeName>Edge</typeName>
+			</type>
+			<name>t3-dev-edge01</name>
+			<clientHandle/>
+			<extendedAttributes/>
+			<isUniversal>false</isUniversal>
+			<universalRevision>0</universalRevision>
+			<isUpgradeAvailable>false</isUpgradeAvailable>
+			<id>edge-9</id>
+			<state>deployed</state>
+			<edgeType>gatewayServices</edgeType>
+			<datacenterMoid>datacenter-7</datacenterMoid>
+			<datacenterName>Datacenter-A</datacenterName>
+			<tenantId>default</tenantId>
+			<apiVersion>4.0</apiVersion>
+			<edgeStatus>RED</edgeStatus>
+			<numberOfConnectedVnics>4</numberOfConnectedVnics>
+			<appliancesSummary>
+				<vmVersion>6.2.7</vmVersion>
+				<applianceSize>compact</applianceSize>
+				<fqdn>NSX-edge-9</fqdn>
+				<numberOfDeployedVms>1</numberOfDeployedVms>
+				<communicationChannel>msgbus</communicationChannel>
+			</appliancesSummary>
+			<hypervisorAssist>false</hypervisorAssist>
+			<allowedActions>
+				<string>Change Log Level</string>
+				<string>Add Edge Appliance</string>
+				<string>Delete Edge Appliance</string>
+				<string>Edit Edge Appliance</string>
+				<string>Edit CLI Credentials</string>
+				<string>Change edge appliance size</string>
+				<string>Force Sync</string>
+				<string>Redeploy Edge</string>
+				<string>Change Edge Appliance Core Dump Configuration</string>
+				<string>Enable hypervisorAssist</string>
+				<string>Edit Highavailability</string>
+				<string>Edit Dns</string>
+				<string>Edit Syslog</string>
+				<string>Edit Automatic Rule Generation Settings</string>
+				<string>Disable SSH</string>
+				<string>Download Edge TechSupport Logs</string>
+			</allowedActions>
+		</edgeSummary>
+		<edgeSummary>
+			<objectId>edge-10</objectId>
+			<objectTypeName>Edge</objectTypeName>
+			<vsmUuid>421957D2-6263-8BE8-DD56-6C87C2FCC643</vsmUuid>
+			<nodeId>7ac57c6c-b64b-4f20-8ea3-8f797e26fdac</nodeId>
+			<revision>17</revision>
+			<type>
+				<typeName>Edge</typeName>
+			</type>
+			<name>t3-dev-dlr01</name>
+			<clientHandle/>
+			<extendedAttributes/>
+			<isUniversal>false</isUniversal>
+			<universalRevision>0</universalRevision>
+			<isUpgradeAvailable>false</isUpgradeAvailable>
+			<id>edge-10</id>
+			<state>deployed</state>
+			<edgeType>distributedRouter</edgeType>
+			<datacenterMoid>datacenter-7</datacenterMoid>
+			<datacenterName>Datacenter-A</datacenterName>
+			<tenantId>default</tenantId>
+			<apiVersion>4.0</apiVersion>
+			<edgeStatus>GREEN</edgeStatus>
+			<numberOfConnectedVnics>4</numberOfConnectedVnics>
+			<appliancesSummary>
+				<vmVersion>6.2.7</vmVersion>
+				<vmBuildInfo>6.2.7-5343629</vmBuildInfo>
+				<applianceSize>compact</applianceSize>
+				<fqdn>NSX-edge-10</fqdn>
+				<numberOfDeployedVms>1</numberOfDeployedVms>
+				<activeVseHaIndex>0</activeVseHaIndex>
+				<vmMoidOfActiveVse>vm-1095</vmMoidOfActiveVse>
+				<vmNameOfActiveVse>t3-dev-dlr01-0</vmNameOfActiveVse>
+				<hostMoidOfActiveVse>host-40</hostMoidOfActiveVse>
+				<hostNameOfActiveVse>192.168.0.102</hostNameOfActiveVse>
+				<resourcePoolMoidOfActiveVse>resgroup-15</resourcePoolMoidOfActiveVse>
+				<resourcePoolNameOfActiveVse>Resources</resourcePoolNameOfActiveVse>
+				<dataStoreMoidOfActiveVse>datastore-1022</dataStoreMoidOfActiveVse>
+				<dataStoreNameOfActiveVse>vol2-dc-a</dataStoreNameOfActiveVse>
+				<statusFromVseUpdatedOn>1504403995005</statusFromVseUpdatedOn>
+				<communicationChannel>msgbus</communicationChannel>
+			</appliancesSummary>
+			<hypervisorAssist>false</hypervisorAssist>
+			<allowedActions>
+				<string>Change Log Level</string>
+				<string>Add Edge Appliance</string>
+				<string>Delete Edge Appliance</string>
+				<string>Edit Edge Appliance</string>
+				<string>Edit CLI Credentials</string>
+				<string>Force Sync</string>
+				<string>Redeploy Edge</string>
+				<string>Change Edge Appliance Core Dump Configuration</string>
+				<string>Edit Highavailability</string>
+				<string>Edit Dns</string>
+				<string>Edit Syslog</string>
+				<string>Enable SSH</string>
+				<string>Download Edge TechSupport Logs</string>
+			</allowedActions>
+			<edgeAssistId>10001</edgeAssistId>
+			<edgeAssistInstanceName>default+edge-10</edgeAssistInstanceName>
+			<lrouterUuid>d71abc32-2d3a-4573-9361-4e6c1cdf5673</lrouterUuid>
+			<logicalRouterScopes>
+				<logicalRouterScope>
+					<type>TransportZone</type>
+					<id>vdnscope-2</id>
+				</logicalRouterScope>
+			</logicalRouterScopes>
+		</edgeSummary>
+		<edgeSummary>
+			<objectId>edge-11</objectId>
+			<objectTypeName>Edge</objectTypeName>
+			<vsmUuid>421957D2-6263-8BE8-DD56-6C87C2FCC643</vsmUuid>
+			<nodeId>7ac57c6c-b64b-4f20-8ea3-8f797e26fdac</nodeId>
+			<revision>14</revision>
+			<type>
+				<typeName>Edge</typeName>
+			</type>
+			<name>t3-dev-lb01</name>
+			<clientHandle/>
+			<extendedAttributes/>
+			<isUniversal>false</isUniversal>
+			<universalRevision>0</universalRevision>
+			<isUpgradeAvailable>false</isUpgradeAvailable>
+			<id>edge-11</id>
+			<state>deployed</state>
+			<edgeType>gatewayServices</edgeType>
+			<datacenterMoid>datacenter-7</datacenterMoid>
+			<datacenterName>Datacenter-A</datacenterName>
+			<tenantId>default</tenantId>
+			<apiVersion>4.0</apiVersion>
+			<edgeStatus>GREEN</edgeStatus>
+			<numberOfConnectedVnics>1</numberOfConnectedVnics>
+			<appliancesSummary>
+				<vmVersion>6.2.7</vmVersion>
+				<vmBuildInfo>6.2.7-5343629</vmBuildInfo>
+				<applianceSize>compact</applianceSize>
+				<fqdn>NSX-edge-11</fqdn>
+				<numberOfDeployedVms>1</numberOfDeployedVms>
+				<activeVseHaIndex>0</activeVseHaIndex>
+				<vmMoidOfActiveVse>vm-1096</vmMoidOfActiveVse>
+				<vmNameOfActiveVse>t3-dev-lb01-0</vmNameOfActiveVse>
+				<hostMoidOfActiveVse>host-40</hostMoidOfActiveVse>
+				<hostNameOfActiveVse>192.168.0.102</hostNameOfActiveVse>
+				<resourcePoolMoidOfActiveVse>resgroup-15</resourcePoolMoidOfActiveVse>
+				<resourcePoolNameOfActiveVse>Resources</resourcePoolNameOfActiveVse>
+				<dataStoreMoidOfActiveVse>datastore-1022</dataStoreMoidOfActiveVse>
+				<dataStoreNameOfActiveVse>vol2-dc-a</dataStoreNameOfActiveVse>
+				<statusFromVseUpdatedOn>1504403995611</statusFromVseUpdatedOn>
+				<communicationChannel>msgbus</communicationChannel>
+			</appliancesSummary>
+			<hypervisorAssist>false</hypervisorAssist>
+			<allowedActions>
+				<string>Change Log Level</string>
+				<string>Add Edge Appliance</string>
+				<string>Delete Edge Appliance</string>
+				<string>Edit Edge Appliance</string>
+				<string>Edit CLI Credentials</string>
+				<string>Change edge appliance size</string>
+				<string>Force Sync</string>
+				<string>Redeploy Edge</string>
+				<string>Change Edge Appliance Core Dump Configuration</string>
+				<string>Enable hypervisorAssist</string>
+				<string>Edit Highavailability</string>
+				<string>Edit Dns</string>
+				<string>Edit Syslog</string>
+				<string>Edit Automatic Rule Generation Settings</string>
+				<string>Disable SSH</string>
+				<string>Download Edge TechSupport Logs</string>
+			</allowedActions>
+		</edgeSummary>
+	</edgePage>
+</pagedEdgeList>
+

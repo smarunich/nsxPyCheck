@@ -1,0 +1,571 @@
+<?xml version="1.0" ?>
+<firewallConfiguration timestamp="1489528532371">
+	<contextId>globalroot-0</contextId>
+	<layer3Sections>
+		<section generationNumber="1489528532371" id="1012" name="PRE-RULES" timestamp="1489528532371" type="LAYER3">
+			<rule disabled="false" id="1023" logged="true">
+				<action>allow</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1012</sectionId>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+		</section>
+		<section generationNumber="1495327749701" id="1018" managedBy="NSX Service Composer" name="SP-PROJECT-C-SPECIFIC :: NSX Service Composer - Firewall" timestamp="1495327749701" type="LAYER3">
+			<description/>
+			<rule disabled="false" id="1035" logged="true" managedBy="NSX Service Composer">
+				<name>ISOLATION</name>
+				<action>deny</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1018</sectionId>
+				<sources excluded="false">
+					<source>
+						<name>SG-PROJECT-C</name>
+						<value>securitygroup-45</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</source>
+				</sources>
+				<destinations excluded="true">
+					<destination>
+						<name>SG-PROJECT-C</name>
+						<value>securitygroup-45</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+				</destinations>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+		</section>
+		<section generationNumber="1495327749719" id="1017" managedBy="NSX Service Composer" name="SP-PROJECT-B-SPECIFIC :: NSX Service Composer - Firewall" timestamp="1495327749719" type="LAYER3">
+			<description/>
+			<rule disabled="false" id="1034" logged="true" managedBy="NSX Service Composer">
+				<name>ISOLATION</name>
+				<action>deny</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1017</sectionId>
+				<sources excluded="false">
+					<source>
+						<name>SG-PROJECT-B</name>
+						<value>securitygroup-39</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</source>
+				</sources>
+				<destinations excluded="true">
+					<destination>
+						<name>SG-PROJECT-B</name>
+						<value>securitygroup-39</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+				</destinations>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+		</section>
+		<section generationNumber="1495327749739" id="1016" managedBy="NSX Service Composer" name="SP-PROJECT-A-SPECIFIC :: NSX Service Composer - Firewall" timestamp="1495327749739" type="LAYER3">
+			<description/>
+			<rule disabled="false" id="1036" logged="true" managedBy="NSX Service Composer">
+				<name>APP-VIP TO APP-TIER</name>
+				<action>allow</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1016</sectionId>
+				<sources excluded="false">
+					<source>
+						<name>SG-PROD-APP-VIP-PROJECT-A</name>
+						<value>securitygroup-47</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</source>
+				</sources>
+				<destinations excluded="false">
+					<destination>
+						<name>SG-PROJECT-A</name>
+						<value>securitygroup-37</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+				</destinations>
+				<services>
+					<service>
+						<name>HTTP</name>
+						<value>application-239</value>
+						<type>Application</type>
+						<isValid>true</isValid>
+					</service>
+				</services>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+			<rule disabled="false" id="1037" logged="true" managedBy="NSX Service Composer">
+				<name>WEB-TIER TO APP-VIP</name>
+				<action>allow</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1016</sectionId>
+				<sources excluded="false">
+					<source>
+						<name>SG-PROJECT-A</name>
+						<value>securitygroup-37</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</source>
+				</sources>
+				<destinations excluded="false">
+					<destination>
+						<name>SG-PROD-APP-VIP-PROJECT-A</name>
+						<value>securitygroup-47</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+				</destinations>
+				<services>
+					<service>
+						<name>HTTP</name>
+						<value>application-239</value>
+						<type>Application</type>
+						<isValid>true</isValid>
+					</service>
+				</services>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+			<rule disabled="false" id="1033" logged="true" managedBy="NSX Service Composer">
+				<name>ISOLATION</name>
+				<action>deny</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1016</sectionId>
+				<sources excluded="false">
+					<source>
+						<name>SG-PROJECT-A</name>
+						<value>securitygroup-37</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</source>
+				</sources>
+				<destinations excluded="true">
+					<destination>
+						<name>SG-PROJECT-A</name>
+						<value>securitygroup-37</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+				</destinations>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+		</section>
+		<section generationNumber="1495327749763" id="1006" managedBy="NSX Service Composer" name="SP-WEB-apache :: NSX Service Composer - Firewall" timestamp="1495327749763" type="LAYER3">
+			<description/>
+			<rule disabled="false" id="1010" logged="true" managedBy="NSX Service Composer">
+				<name>ANY TO WEB-PROJECT-X/http/https</name>
+				<action>allow</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1006</sectionId>
+				<destinations excluded="false">
+					<destination>
+						<name>SG-PROD-WEB-PROJECT-A</name>
+						<value>securitygroup-13</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+					<destination>
+						<name>SG-PROD-WEB-PROJECT-B</name>
+						<value>securitygroup-34</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+					<destination>
+						<name>SG-PROD-WEB-PROJECT-C</name>
+						<value>securitygroup-42</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+				</destinations>
+				<services>
+					<service>
+						<name>HTTP</name>
+						<value>application-239</value>
+						<type>Application</type>
+						<isValid>true</isValid>
+					</service>
+					<service>
+						<name>HTTPS</name>
+						<value>application-77</value>
+						<type>Application</type>
+						<isValid>true</isValid>
+					</service>
+				</services>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+		</section>
+		<section generationNumber="1495327749783" id="1007" managedBy="NSX Service Composer" name="SP-APP-node.js :: NSX Service Composer - Firewall" timestamp="1495327749783" type="LAYER3">
+			<description/>
+			<rule disabled="false" id="1011" logged="true" managedBy="NSX Service Composer">
+				<name>PROD-WEB to PROD-APP-PROJECT-X/node.js</name>
+				<action>allow</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1007</sectionId>
+				<sources excluded="false">
+					<source>
+						<name>SG-PROD-WEB</name>
+						<value>securitygroup-17</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</source>
+				</sources>
+				<destinations excluded="false">
+					<destination>
+						<name>SG-PROD-APP-PROJECT-A</name>
+						<value>securitygroup-14</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+					<destination>
+						<name>SG-PROD-APP-PROJECT-B</name>
+						<value>securitygroup-35</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+					<destination>
+						<name>SG-PROD-APP-PROJECT-C</name>
+						<value>securitygroup-43</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+				</destinations>
+				<services>
+					<service>
+						<name>HTTP</name>
+						<value>application-239</value>
+						<type>Application</type>
+						<isValid>true</isValid>
+					</service>
+					<service>
+						<name>node.js</name>
+						<value>application-416</value>
+						<type>Application</type>
+						<isValid>true</isValid>
+					</service>
+				</services>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+		</section>
+		<section generationNumber="1495327749803" id="1010" managedBy="NSX Service Composer" name="SP-DB-mysql :: NSX Service Composer - Firewall" timestamp="1495327749803" type="LAYER3">
+			<description/>
+			<rule disabled="false" id="1012" logged="true" managedBy="NSX Service Composer">
+				<name>PROD-APP to PROD-DB-PROJECT-X/MySQL</name>
+				<action>allow</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1010</sectionId>
+				<sources excluded="false">
+					<source>
+						<name>SG-PROD-APP</name>
+						<value>securitygroup-18</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</source>
+				</sources>
+				<destinations excluded="false">
+					<destination>
+						<name>SG-PROD-DB-PROJECT-A</name>
+						<value>securitygroup-15</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+					<destination>
+						<name>SG-PROD-DB-PROJECT-C</name>
+						<value>securitygroup-44</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+					<destination>
+						<name>SG-PROD-DB-PROJECT-B</name>
+						<value>securitygroup-36</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+				</destinations>
+				<services>
+					<service>
+						<name>MySQL</name>
+						<value>application-28</value>
+						<type>Application</type>
+						<isValid>true</isValid>
+					</service>
+				</services>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+		</section>
+		<section generationNumber="1495327749820" id="1013" managedBy="NSX Service Composer" name="SP-PROD-WEB :: NSX Service Composer - Firewall" timestamp="1495327749820" type="LAYER3">
+			<description/>
+			<rule disabled="false" id="1030" logged="true" managedBy="NSX Service Composer">
+				<name>BLOCK WEB to WEB</name>
+				<action>deny</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1013</sectionId>
+				<sources excluded="false">
+					<source>
+						<name>SG-PROD-WEB</name>
+						<value>securitygroup-17</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</source>
+				</sources>
+				<destinations excluded="false">
+					<destination>
+						<name>SG-PROD-WEB</name>
+						<value>securitygroup-17</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+				</destinations>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+		</section>
+		<section generationNumber="1495327749837" id="1014" managedBy="NSX Service Composer" name="SP-PROD-APP :: NSX Service Composer - Firewall" timestamp="1495327749837" type="LAYER3">
+			<description/>
+			<rule disabled="false" id="1031" logged="true" managedBy="NSX Service Composer">
+				<name>BLOCK APP to APP</name>
+				<action>deny</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1014</sectionId>
+				<sources excluded="false">
+					<source>
+						<name>SG-PROD-APP</name>
+						<value>securitygroup-18</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</source>
+				</sources>
+				<destinations excluded="false">
+					<destination>
+						<name>SG-PROD-APP</name>
+						<value>securitygroup-18</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+				</destinations>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+		</section>
+		<section generationNumber="1495327749855" id="1015" managedBy="NSX Service Composer" name="SP-PROD-DB :: NSX Service Composer - Firewall" timestamp="1495327749855" type="LAYER3">
+			<description/>
+			<rule disabled="false" id="1032" logged="true" managedBy="NSX Service Composer">
+				<name>BLOCK DB to DB</name>
+				<action>deny</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1015</sectionId>
+				<sources excluded="false">
+					<source>
+						<name>SG-PROD-DB</name>
+						<value>securitygroup-19</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</source>
+				</sources>
+				<destinations excluded="false">
+					<destination>
+						<name>SG-PROD-DB</name>
+						<value>securitygroup-19</value>
+						<type>SecurityGroup</type>
+						<isValid>true</isValid>
+					</destination>
+				</destinations>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+		</section>
+		<section generationNumber="1489528532371" id="1003" name="Default Section Layer3" timestamp="1489528532371" type="LAYER3">
+			<rule disabled="false" id="1003" logged="false">
+				<name>Default Rule NDP</name>
+				<action>allow</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1003</sectionId>
+				<services>
+					<service>
+						<name>IPv6-ICMP Neighbor Advertisement</name>
+						<value>application-31</value>
+						<type>Application</type>
+						<isValid>true</isValid>
+					</service>
+					<service>
+						<name>IPv6-ICMP Neighbor Solicitation</name>
+						<value>application-328</value>
+						<type>Application</type>
+						<isValid>true</isValid>
+					</service>
+				</services>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+			<rule disabled="false" id="1002" logged="false">
+				<name>Default Rule DHCP</name>
+				<action>allow</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1003</sectionId>
+				<services>
+					<service>
+						<name>DHCP-Client</name>
+						<value>application-23</value>
+						<type>Application</type>
+						<isValid>true</isValid>
+					</service>
+					<service>
+						<name>DHCP-Server</name>
+						<value>application-299</value>
+						<type>Application</type>
+						<isValid>true</isValid>
+					</service>
+				</services>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+			<rule disabled="false" id="1001" logged="true">
+				<name>Default Rule</name>
+				<action>deny</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1003</sectionId>
+				<precedence>default</precedence>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+		</section>
+	</layer3Sections>
+	<layer2Sections>
+		<section generationNumber="1489528532371" id="1001" name="Default Section Layer2" timestamp="1489528532371" type="LAYER2">
+			<rule disabled="false" id="1004" logged="false">
+				<name>Default Rule</name>
+				<action>allow</action>
+				<appliedToList>
+					<appliedTo>
+						<name>DISTRIBUTED_FIREWALL</name>
+						<value>DISTRIBUTED_FIREWALL</value>
+						<type>DISTRIBUTED_FIREWALL</type>
+						<isValid>true</isValid>
+					</appliedTo>
+				</appliedToList>
+				<sectionId>1001</sectionId>
+				<precedence>default</precedence>
+				<direction>inout</direction>
+				<packetType>any</packetType>
+			</rule>
+		</section>
+	</layer2Sections>
+	<layer3RedirectSections>
+		<section generationNumber="1489528532371" id="1002" name="Default Section" timestamp="1489528532371" type="L3REDIRECT"/>
+	</layer3RedirectSections>
+	<generationNumber>1495327749855</generationNumber>
+</firewallConfiguration>
+

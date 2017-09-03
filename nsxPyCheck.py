@@ -306,13 +306,18 @@ def nsx_py_check_controllers_config(nsxmgr):
     syslogPort = config.get('NvControllers','syslogPort')
     syslogProtocol = config.get('NvControllers','syslogProtocol')
     syslogLevel = config.get('NvControllers','syslogLevel')
-    for controller in data['controllers']['controller']:
+    if isinstance(data['controllers']['controller'],dict):
+        data['controllers']['controller'] = [ data['controllers']['controller'] ]
+    for controller in data['controllers']['controller']:        
         if controller['status'] != controllerStatus:
             NVCTRLSOOC += [controller['id']+'\t status requires attention. Current:\t'+controller['status']+'\tExpected:\t'+controllerStatus]
         configUrl='https://'+str(nsxmgr)+'/api/2.0/vdn/controller/'+controller['id']+'/syslog'
-        nsxCtrlConfigData=xmltodict.parse(nsx_get(configUrl))
-        if nsxCtrlConfigData['controllerSyslogServer']['syslogServer'] not in syslogServers or nsxCtrlConfigData['controllerSyslogServer']['port'] != syslogPort or nsxCtrlConfigData['controllerSyslogServer']['protocol'] != syslogProtocol or nsxCtrlConfigData['controllerSyslogServer']['level'] != syslogLevel:
-            NVCTRLSOOC += [controller['id']+'\t'+nsxCtrlConfigData['controllerSyslogServer']['syslogServer']+'\t'+nsxCtrlConfigData['controllerSyslogServer']['port']+'\t'+ nsxCtrlConfigData['controllerSyslogServer']['protocol']+'\t'+nsxCtrlConfigData['controllerSyslogServer']['level']]
+        try:
+            nsxCtrlConfigData=xmltodict.parse(nsx_get(configUrl))
+            if nsxCtrlConfigData['controllerSyslogServer']['syslogServer'] not in syslogServers or nsxCtrlConfigData['controllerSyslogServer']['port'] != syslogPort or nsxCtrlConfigData['controllerSyslogServer']['protocol'] != syslogProtocol or nsxCtrlConfigData['controllerSyslogServer']['level'] != syslogLevel:
+                NVCTRLSOOC += [controller['id']+'\t'+nsxCtrlConfigData['controllerSyslogServer']['syslogServer']+'\t'+nsxCtrlConfigData['controllerSyslogServer']['port']+'\t'+ nsxCtrlConfigData['controllerSyslogServer']['protocol']+'\t'+nsxCtrlConfigData['controllerSyslogServer']['level']]
+        except urllib.request.HTTPError:
+             NVCTRLSOOC += [controller['id']+':\t'+'Syslog Server is not configured.']  
     if config.get('General','debugEnabled') == 'true':
         print(NVCTRLSOOC)
 
