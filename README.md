@@ -107,7 +107,9 @@ optional arguments:
 cat  test-nsx/192.168.0.104-NSX-PyCheck.report
 ```
 
-# Example
+# Examples
+
+For reports please refer to `examples` folder.
 
 - Step 1: 
 ```
@@ -198,19 +200,19 @@ NSX Prepared Host CP Communication Status: all configuration items (CIs) out of 
 
 GENERAL EDGE: Appliance Size, Cluster location, HA configuration, Appliance Version and Edge state: all configuration items (CIs) out of compliance with a baseline.
 
-* l2vpn-dlr01 compact NOT DEPLOYED 1 6.2.7 RED
-* l2vpn-server large NOT DEPLOYED 1 6.2.7 RED
-* t2-udlr compact NOT DEPLOYED 2 6.2.7 RED
-* t1-edge1 compact NOT DEPLOYED 2 6.2.7 RED
-* t1-udlr compact NOT DEPLOYED 2 6.2.7 RED
-* t2-edge compact NOT DEPLOYED 2 6.2.7 RED
-* t1-app1-web-lb compact NOT DEPLOYED 1 6.2.7 RED
-* t1-app1-app-lb compact NOT DEPLOYED 1 6.2.7 RED
-* t3-ecmp01 compact NOT DEPLOYED 1 6.2.7 RED
-* t3-ecmp02 compact NOT DEPLOYED 1 6.2.7 RED
+* l2vpn-dlr01 compact 60U2NSX625-A 1 6.2.7 GREEN
+* l2vpn-server large 60U2NSX625-A 1 6.2.7 GREEN
+* t2-udlr compact 60U2NSX625-A 2 6.2.7 GREEN
+* t1-edge1 compact 60U2NSX625-A 2 6.2.7 GREEN
+* t1-udlr compact 60U2NSX625-A 2 6.2.7 GREEN
+* t2-edge compact 60U2NSX625-A 2 6.2.7 GREEN
+* t1-app1-web-lb compact 60U2NSX625-A 1 6.2.7 GREEN
+* t1-app1-app-lb compact 60U2NSX625-A 1 6.2.7 GREEN
+* t3-ecmp01 compact vol2-dc-a 1 6.2.7 GREEN
+* t3-ecmp02 compact vol2-dc-a 1 6.2.7 GREEN
 * t3-dev-edge01 compact NOT DEPLOYED 1 6.2.7 RED
-* t3-dev-dlr01 compact NOT DEPLOYED 1 6.2.7 RED
-* t3-dev-lb01 compact NOT DEPLOYED 1 6.2.7 RED
+* t3-dev-dlr01 compact vol2-dc-a 1 6.2.7 GREEN
+* t3-dev-lb01 compact vol2-dc-a 1 6.2.7 GREEN
 
 NSX Edge Syslog: all configuration items (CIs) out of compliance with a baseline.
 
