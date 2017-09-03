@@ -195,7 +195,7 @@ nsxPyCheck Report(s) for Saturday, 02. September 2017 11:50PM
 
 NSX Manager: all configuration items (CIs) out of compliance with a baseline.
 
-* NTP server is not set or NTP Misconfigured: 1 9 2 . 1 6 8 . 0 . 9
+* NTP server is not set or NTP Misconfigured: 192.168.0.9
 * Syslog server is not set or Syslog Misconfigured: 192.168.0.130 514 UDP
 * NSX Manager connection to vCenter is down.
 
@@ -265,31 +265,24 @@ NSX General Routing: all configuration items (CIs) out of compliance with a base
 * t3-dev-dlr01 ECMP State Enabled: false
 * t3-dev-lb01 ECMP State Enabled: false
 * t3-dev-lb01 Routing Logging State Enabled: false
- l2vpn-dlr01 ['0.0.0.0/0'] Route is missing.
 * t2-udlr ['0.0.0.0/0'] Route is missing.
 * t1-udlr ['0.0.0.0/0'] Route is missing.
 * t3-dev-dlr01 ['0.0.0.0/0'] Route is missing.
 
 NSX BGP: all configuration items (CIs) out of compliance with a baseline.
 
-* BGP is disabled.
-* BGP is disabled.
 * t1-edge1 Neighbor: 10.1.105.1 BGP holdDown timer is misconfigured.
 * t1-edge1 Neighbor: 10.1.105.1 BGP keepAliveTimer is misconfigured.
 * t1-edge1 Neighbor: 10.1.105.1 BGP Password is not set.
 * t1-edge1 Neighbor: 10.1.11.4 BGP holdDown timer is misconfigured.
 * t1-edge1 Neighbor: 10.1.11.4 BGP keepAliveTimer is misconfigured.
 * t1-edge1 Neighbor: 10.1.11.4 BGP Password is not set.
-* BGP Redistribution is misconfigured.
 * t2-edge Neighbor: 10.1.105.1 BGP holdDown timer is misconfigured.
 * t2-edge Neighbor: 10.1.105.1 BGP keepAliveTimer is misconfigured.
 * t2-edge Neighbor: 10.1.105.1 BGP Password is not set.
 * t2-edge Neighbor: 10.1.12.4 BGP holdDown timer is misconfigured.
 * t2-edge Neighbor: 10.1.12.4 BGP keepAliveTimer is misconfigured.
 * t2-edge Neighbor: 10.1.12.4 BGP Password is not set.
-* BGP Redistribution is misconfigured.
-* BGP is disabled.
-* BGP is disabled.
 * t3-ecmp01 Neighbor: 10.1.105.1 BGP holdDown timer is misconfigured.
 * t3-ecmp01 Neighbor: 10.1.105.1 BGP keepAliveTimer is misconfigured.
 * t3-ecmp01 Neighbor: 10.1.105.1 BGP Password is not set.
@@ -314,7 +307,6 @@ NSX BGP: all configuration items (CIs) out of compliance with a baseline.
 * t3-dev-edge01 Neighbor: 10.1.13.2 BGP keepAliveTimer is misconfigured.
 * t3-dev-edge01 Neighbor: 10.1.13.2 BGP Password is not set.
 * t3-dev-edge01 BGP Redistribution is misconfigured. BGP to Static.
-* BGP is disabled.
 
 NSX DHCP Relay: all configuration items (CIs) out of compliance with a baseline.
 
