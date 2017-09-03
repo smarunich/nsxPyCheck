@@ -22,19 +22,21 @@ nsxPyCheck has the following dependencies:
 - xmltodict
 # Install
 - On Debian/Ubuntu:
-```apt install git python3 python3-pip
+```
+apt install git python3 python3-pip
 pip3 install jinja2 inscriptis lxml xmltodict
 git clone https://github.com/smarunich/nsxPyCheck
 ```
 - On RHEL/CentOS:
-```yum install epel-release
+```
+yum install epel-release
 yum update
 yum install git python34 python34-pip
 pip3 install jinja2 inscriptis lxml xmltodict
 git clone https://github.com/smarunich/nsxPyCheck
 ```
 
-- After you installed nsxPyCheck, you have to configure `nsxPyCheck.config` file that contains NSX manager credentials. 
+- After nsxPyCheck installed, NSX manager credentials needs to be set in  `nsxPyCheck.config` 
 
 The `nsxPyCheck.config` file has the following format:
 
@@ -93,7 +95,7 @@ optional arguments:
 
 - To run nsxPyCheck:
 
-1. You have to update NSX Manager credentials in `nsxPyCheck.config` like described above.
+1. Update NSX Manager credentials in `nsxPyCheck.config` like described above.
 2. Run configuration collection.
 ```
 ./nsxPyCheck.py --collect --dir test-nsx --nsxmgr 192.168.0.104 --collect
